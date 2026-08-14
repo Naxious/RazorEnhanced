@@ -134,6 +134,15 @@ namespace Assistant
                                             ShortFileName(System.Reflection.Assembly.GetExecutingAssembly().Location)
                                             );
             }
+
+            if (!String.IsNullOrWhiteSpace(Engine.ClassicUOSettingsPath))
+            {
+                cuo.StartInfo.Arguments += String.Format(" -settings \"{0}\"", Engine.ClassicUOSettingsPath);
+            }
+            if (!String.IsNullOrWhiteSpace(Engine.ClassicUOProfilesPath))
+            {
+                cuo.StartInfo.Arguments += String.Format(" -profilespath \"{0}\"", Engine.ClassicUOProfilesPath);
+            }
             cuo.Start();
             m_Running = false;
             return false;
@@ -652,4 +661,3 @@ namespace Assistant
 
     }
 }
-

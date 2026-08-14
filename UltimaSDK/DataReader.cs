@@ -256,7 +256,7 @@ namespace Ultima
 #if DEBUG
                 throw new IndexOutOfRangeException();
 #else
-                Log.Error($"size out of range. {Position + size} > {Length}");
+                Platforms.PlatformHelper.Log.Error($"size out of range. {Position + size} > {Length}");
 #endif
             }
         }

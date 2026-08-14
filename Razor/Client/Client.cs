@@ -101,6 +101,8 @@ namespace Assistant
                     { "e|encryptPatch", "patch encryption (usually true)", e => patchEncryption = e != null },
                     { "o|osiEncryption", "use OSI encrytpion (usually only for paid UO server)", o => osiEncryption = o != null },
                     { "s|startCuoClient", "use the cuopath to start CUO instead of OSI client", s => cuoClientUsed = s != null },
+                    { "cuoSettings=", "persistent ClassicUO settings.json path", x => { } },
+                    { "cuoProfiles=", "persistent ClassicUO profiles directory", x => { } },
                     };
 
                 List<string> extra;

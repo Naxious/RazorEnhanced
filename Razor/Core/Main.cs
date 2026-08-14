@@ -18,6 +18,10 @@ namespace Assistant
         public static string RootPath =>
             _rootPath ?? (_rootPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(Engine)).Location));
 
+        internal static string ClassicUOSettingsPath { get; private set; } = String.Empty;
+
+        internal static string ClassicUOProfilesPath { get; private set; } = String.Empty;
+
         private static IPAddress m_ip;
 
         internal static IPAddress IP
@@ -215,6 +219,8 @@ namespace Assistant
                     { "e|encryptPatch", "patch encryption (usually true)", (x) => { } },
                     { "o|osiEncryption", "use OSI encrytpion (usually only for paid UO server)", (x) => { } },
                     { "s|startCuoClient", "use the cuopath to start CUO instead of OSI client", (x) => { } },
+                    { "cuoSettings=", "persistent ClassicUO settings.json path", x => ClassicUOSettingsPath = x ?? String.Empty },
+                    { "cuoProfiles=", "persistent ClassicUO profiles directory", x => ClassicUOProfilesPath = x ?? String.Empty },
                     };
 
             List<string> extra = new();
