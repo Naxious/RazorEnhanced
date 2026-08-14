@@ -180,6 +180,7 @@ namespace Assistant
         internal static void EnsureDirectoriesExist()
         {
             System.IO.Directory.CreateDirectory(Path.Combine(Assistant.Engine.RootPath, "Profiles"));
+            System.IO.Directory.CreateDirectory(Path.Combine(Assistant.Engine.RootPath, "Profiles", "default"));
             System.IO.Directory.CreateDirectory(Path.Combine(Assistant.Engine.RootPath, "Backup"));
             System.IO.Directory.CreateDirectory(Path.Combine(Assistant.Engine.RootPath, "Scripts"));
         }
